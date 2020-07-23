@@ -8,18 +8,18 @@ import io.cucumber.java.en.When;
 
 public class HooksFeature {
 	
-//	@Before
-//	public void setUp()
-//	{
-//		System.out.println("Launch  FF");
-//		System.out.println("Enter URL for application");
-//	}
-//	
-//	@After
-//	public void tearDown() 
-//	{
-//		System.out.println("tear down the data application");
-//	}
+	@Before
+	public void setUp()
+	{
+		System.out.println("Launch  FF");
+		System.out.println("Enter URL for application");
+	}
+	
+	@After
+	public void tearDown() 
+	{
+		System.out.println("tear down the data application");
+	}
 	
 	
 	@Given("user is  on homepag")

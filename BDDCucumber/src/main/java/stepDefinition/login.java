@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -10,21 +11,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import BaseClass.TestBaseClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class login {
+public class login extends TestBaseClass {
+	
+	public login() throws IOException
+	{
+		super(); //It will Called Parent class constructor(TestBaseClass().) 
+		
+	}
 	
 	WebDriver driver;
 	
 	@Given("user is  on homepage")
 	public void user_is_on_homepage() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\shahn\\Downloads\\chromedriver_win32\\chromedriver_win32\\chromedriver.exe");
-	    driver = new ChromeDriver();
-	    driver.get("https://www.freecrm.com");
-	    driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		initialization();
+		
 	}
 
 	@When("^user navigates to Login Page$")
